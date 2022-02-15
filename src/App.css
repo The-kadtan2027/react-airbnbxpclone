@@ -7,6 +7,13 @@ body {
   margin: 0;
 }
 
+.grey {
+  color: grey;
+}
+
+.bold {
+  font-weight: bold;
+}
 nav {
   height: 70px;
   display: flex;
@@ -45,4 +52,23 @@ nav {
 .hero-subtitle {
   margin-top: 0;
   max-width: 320px;
+}
+
+.card {
+  width: 176px;
+  font-size: 12px;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 9px;
+}
+.card-stat {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  width: 14px;
+  margin-right: 2px;
 }
