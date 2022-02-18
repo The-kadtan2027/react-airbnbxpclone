@@ -1,21 +1,28 @@
 import React from "react";
 
-import mainImg from "../images/katie-zaferes.png"
-import star from "../images/star.png"
+// import mainImg from "../images/"
+// import star from "../images/star.png"
 
-const Card = () => {
+const Card = (props) => {
+    let badgeText
+    if(props.onSpot === 0) {
+        badgeText = "SOLD OUT";
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
 
     return (
         <div class="card">
-            <img src={mainImg} alt="img" className="card-img" />
+            {badgeText && <div className="card-badge">{badgeText}</div>}
+            <img src={`${process.env.PUBLIC_URL}/images/`+ props.img} alt="img" className="card-img" />
             <div class="card-stat">
-                <img src={star} alt="star" className="star"/>
-                <span> 5</span>
-                <span className="grey">(6) • </span>
-                <span className="grey">USA</span>
+                <img src={process.env.PUBLIC_URL +"/images/star.png"} alt="star" className="star"/>
+                <span> {props.rating}</span>
+                <span className="grey">({props.reviewCount}) • </span>
+                <span className="grey">{props.location}</span>
             </div>
-            <p>Life lessons with Katie Zaferes</p>
-            <p><span className="bold">From $136</span> / person</p>
+            <p className="card-title">{props.title}</p>
+            <p><span className="bold">From ${props.price}</span> / person</p>
 
         </div>
     )

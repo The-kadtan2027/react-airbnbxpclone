@@ -1,9 +1,9 @@
 import React from "react";
-import group from "../images/group.png";
+// import group from "../images/group.png";
 const Hero = () => {
   return (
     <div className="hero">
-      <img src={group} alt="groupt-images" className="hero-img" />
+      <img src={process.env.PUBLIC_URL +"/images/group.png"} alt="groupt-images" className="hero-img" />
       <h1 className="hero-title">Online Experience</h1>
       <p className="hero-subtitle">
         Join unique interactive activities led by one-of-a-kind hosts--all
